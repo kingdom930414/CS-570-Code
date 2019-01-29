@@ -1,0 +1,12 @@
+{
+  "name": "aijin",
+  "version": "1.0.0",
+  "description": "I have 0 cs background",
+  "main": "test4.js",
+  "scripts": {
+    "test": "start",
+    "start": "node test4.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

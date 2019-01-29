@@ -1,0 +1,133 @@
+<html>
+
+<head>
+	<title>xxxx</title>
+	<style>
+		td {
+			width: 160px;
+			height: 130px;
+			text-align: center;
+			border: 1px dotted blue;
+		}
+	</style>
+
+	<script>
+		var tdNum = 3;
+		var rowNum = 3;
+		var theX = "<font face='�����п�' color='red' size='16'>��</font>";
+		var theO = "<font face='�����п�' color='blue' size='16'>��</font>";
+		var type = 1;
+		function playing(eml) {
+			if (eml.innerHTML != ".") {
+				return;
+			}
+			if (type == 1) {
+				eml.innerHTML = theX;
+				eml.name = "x";
+				type = 0;
+			} else {
+				eml.innerHTML = theO;
+				eml.name = "o";
+				type = 1;
+			}
+			straight(eml);
+
+		}
+		function straight(eml) {
+			var eml_ID = eml.id.split("_");
+
+			var emlClass = eml.name;
+			var rowSameNum = 0;
+			var colSameNum = 0;
+			for (i = 1; i <= tdNum; i++) {
+				var otherHorizontal = document.getElementById(eml_ID[0] + "_" + i).name;
+				var otherVertical = document.getElementById(i + "_" + eml_ID[1]).name;
+				if (emlClass == otherHorizontal) {
+					rowSameNum += 1;
+				}
+				if (emlClass == otherVertical) {
+					colSameNum += 1;
+				}
+			}
+			if (rowSameNum == tdNum) {
+				isWin(emlClass);
+			} else if (colSameNum == rowNum) {
+				isWin(emlClass);
+			} else {
+				oblique(eml);
+			}
+		}
+		function oblique(eml) {//�ж�б     
+
+			var point = ["1_1", "2_2", "3_3", "1_3", "3_1"];
+			for (i = 0; i < point.length; i++) {
+				if (eml.id == point[i]) {
+					judge = true;
+					break;
+				}
+			}
+			if (judge == false) {
+				return;
+			}
+
+			var one = ["1_1", "2_2", "3_3"];
+			var theSameNum = 0;
+			for (i = 0; i < one.length; i++) {
+				var clazz = document.getElementById(one[i]).name;
+				if (eml.name == clazz) {
+					theSameNum += 1;
+				}
+			}
+			if (theSameNum == tdNum) {
+				isWin(eml.name);
+			} else {
+				var two = ["1_3", "2_2", "3_1"];
+				var theSameNum2 = 0;
+				for (i = 0; i < two.length; i++) {
+					var clazz2 = document.getElementById(two[i]).name;
+					if (eml.name == clazz2) {
+						theSameNum2 += 1;
+					}
+				}
+				if (theSameNum2 == tdNum) {
+					isWin(eml.name);
+				}
+			}
+		}
+		function isWin(sb) {
+			if (confirm("��" + sb + "Ӯ��\r\n�Ƿ����¿�ʼ")) {
+				restart();
+			}
+		}
+		function restart() {
+			window.location.reload();
+		}
+	</script>
+
+</head>
+
+<body>
+	<center>
+		<table style="width:550px;height:460px;border:10px dotted #aaaaaa;">
+			<tr>
+				<td id="1_1" onclick="playing(this)">.</td>
+				<td id="1_2" onclick="playing(this)">.</td>
+				<td id="1_3" onclick="playing(this)">.</td>
+			</tr>
+			<tr>
+				<td id="2_1" onclick="playing(this)">.</td>
+				<td id="2_2" onclick="playing(this)">.</td>
+				<td id="2_3" onclick="playing(this)">.</td>
+			</tr>
+			<tr>
+				<td id="3_1" onclick="playing(this)">.</td>
+				<td id="3_2" onclick="playing(this)">.</td>
+				<td id="3_3" onclick="playing(this)">.</td>
+			</tr>
+		</table>
+		<button onclick="restart()">���¿�ʼ</button>
+	</center>
+
+	<body>
+
+</html>

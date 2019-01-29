@@ -1,0 +1,14 @@
+{
+  "name": "Huffman",
+  "version": "1.0.0",
+  "description": "",
+  "main": "huffman.js",
+  "scripts": {
+    "start": "node 1.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "0.0.1-security"
+  }
+}

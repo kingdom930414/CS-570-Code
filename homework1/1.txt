@@ -1,0 +1,1 @@
+{"size":[["X"," ","A"," "],[" ","O"," ","X"],[" "," "," "," "]],"currentPlayer":1,"winConfig":3,"playerNum":3,"boardSize":3}
