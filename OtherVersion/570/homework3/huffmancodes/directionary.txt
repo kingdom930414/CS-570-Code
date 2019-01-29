@@ -1,0 +1,7 @@
+I was running in:
+
+C:\Users\(user name)\huffman.js
+
+npm start should work well hopefully.
+
+Sorry for any inconvenience.

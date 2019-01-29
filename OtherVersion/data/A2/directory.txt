@@ -1,0 +1,5 @@
+C:\Users\aijin\hw2222.java
+C:\Users\aijin\package.json
+
+I can't use node to open a java file. It can't read import java.util.*;
+I tried for two hours on how to make npm work.

@@ -1,0 +1,8 @@
+As stated in the requirement:
+"Punctuation and other symbols should not impact the search. 
+So the appearance of Microsoft Corporation, Inc. in the companies.dat file should 
+match with Microsoft Corporation Inc in the article."
+Later in the file it shows:
+"Apple Inc.	4	3.08333%"
+Where the "." is not ignored as said previously.
+In our case, we use "Apple Inc." as a whole word to bypass this conflict.

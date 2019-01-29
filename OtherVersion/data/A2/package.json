@@ -1,0 +1,14 @@
+{
+  "name": "aijin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "hw2222.java",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "start-nlp": "hw2222.java",
+    "start": "npm run start-nlp"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "lab4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lab_4.js",
+  "scripts": {
+    "start": "node lab_4.js",
+    "test": "node lab_4.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

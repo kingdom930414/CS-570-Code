@@ -1,0 +1,16 @@
+{
+  "name": "",
+  "version": "",
+  "description": "",
+  "main": "base.js",
+  "scripts": {
+    "start": "node base.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "graceful-fs": "^4.1.11",
+    "prompt-sync": "^4.1.5",
+    "uuid": "^3.0.1"
+  }
+}

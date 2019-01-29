@@ -1,0 +1,76 @@
+package lab2;
+import java.io.*;
+import java.util.*;
+ 
+public class lab2 {
+ 
+    public static void main(String arg[]){
+        int key = 5;
+        decrypt(key);
+    }
+ 
+    static String decrypt(String msg, int key){
+ 
+        String allch = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        int allchL = allch.length();
+        String de_msg = "";
+        
+        for(int i=0; i< msg.length(); i++){
+            Character letter = msg.charAt(i);
+            
+            if (i%3==0&&i!=0){
+            	key = (key+2)%(26*2);
+            }
+            
+            if(allch.indexOf(letter) >= 0) {
+                int pos = allch.indexOf(letter);
+                pos -= key;
+                
+                if(pos < 0){
+                    pos = allchL + pos;
+                }
+                pos %= allchL;
+                Character e_letter = allch.charAt(pos);
+                de_msg += e_letter;
+ 
+            }else{
+                de_msg += letter;
+            }
+        }
+        return de_msg;
+    }
+ 
+    static void decrypt(int key){
+        FileInputStream file;
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter the location of the message: ");
+        String name = in.nextLine();
+        String ffile = "";
+ 
+        try {
+            file = new FileInputStream(name);
+            Scanner filein = new Scanner(file);
+            int size = 0;
+            while (filein.hasNextLine()) {
+                String line = filein.nextLine();
+                ffile += line + "\n";
+                size += line.length();
+            }
+            System.out.println("File read!");
+            ffile = decrypt(ffile, key);
+            System.out.println("Code: " + ffile);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+  
+        try {
+ 
+            File newTextFile = new File("C:\\Users\\aijin\\Desktop\\solution.txt");//Change directory here !!!
+            FileWriter f1 = new FileWriter(newTextFile);
+            f1.write(ffile);
+            System.out.println("Decrypted file stored on Desktop");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+}

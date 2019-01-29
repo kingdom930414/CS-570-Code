@@ -1,0 +1,16 @@
+{
+  "name": " ",
+  "version": "1.0.0",
+  "description": " ",
+  "main": " ",
+  "scripts": {
+    "start": "node test3.js"
+  },
+  "author": " ",
+  "license": "ISC",
+  "dependencies": {
+    "graceful-fs": "^4.1.11",
+    "prompt-sync": "^4.1.4",
+    "readline-sync": "^1.4.7"
+  }
+}

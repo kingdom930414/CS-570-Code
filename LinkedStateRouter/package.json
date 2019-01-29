@@ -1,0 +1,12 @@
+{
+  "name": "linkedstaterouter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "LinkStateRouter.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node LinkStateRouter.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

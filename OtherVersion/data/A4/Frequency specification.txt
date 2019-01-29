@@ -1,0 +1,5 @@
+As defined in requirement:" Relevance is defined as frequency of the company name 
+appearing in the article divided by the number of words in the article."
+In our case, Verizon Wireless count as one company thus result in one word as hit count.
+Technically Verizon Wireless is one name or two words, since it's not specified in
+requirement, we regard it as one name and one hit count.
